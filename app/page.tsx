@@ -53,7 +53,7 @@ export default function Portfolio() {
     {
       title: "E-Commerce Platform",
       description: "Full-stack e-commerce solution with React, Node.js, and PostgreSQL",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80", // Unsplash new e-commerce
       tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
       github: "#",
       live: "#",
@@ -61,7 +61,7 @@ export default function Portfolio() {
     {
       title: "Task Management App",
       description: "Collaborative task management with real-time updates",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80", // Unsplash dashboard
       tech: ["Next.js", "Socket.io", "MongoDB", "Tailwind"],
       github: "#",
       live: "#",
@@ -69,7 +69,7 @@ export default function Portfolio() {
     {
       title: "AI Chat Interface",
       description: "Modern chat interface with AI integration and voice support",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80", // Unsplash chat
       tech: ["React", "OpenAI", "WebRTC", "Firebase"],
       github: "#",
       live: "#",
@@ -77,7 +77,7 @@ export default function Portfolio() {
     {
       title: "Portfolio Dashboard",
       description: "Analytics dashboard for tracking portfolio performance",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", // Unsplash analytics
       tech: ["Vue.js", "D3.js", "Express", "Redis"],
       github: "#",
       live: "#",
@@ -282,7 +282,7 @@ export default function Portfolio() {
                       <Button
                         size="sm"
                         variant="secondary"
-                        className="rounded-full bg-white/90 hover:bg-white text-slate-900"
+                        className="rounded-full bg-white/90 hover:bg-white hover:text-blue-800 dark:hover:text-blue-200 text-blue-600 dark:text-blue-400 transition-colors"
                       >
                         <Github className="h-4 w-4 mr-1" />
                         Code
@@ -290,7 +290,7 @@ export default function Portfolio() {
                       <Button
                         size="sm"
                         variant="secondary"
-                        className="rounded-full bg-white/90 hover:bg-white text-slate-900"
+                        className="rounded-full bg-white/90 hover:bg-white hover:text-blue-800 dark:hover:text-blue-200 text-blue-600 dark:text-blue-400 transition-colors"
                       >
                         <ExternalLink className="h-4 w-4 mr-1" />
                         Live
