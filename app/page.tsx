@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Moon, Sun, Github, Linkedin, Mail, ExternalLink, Code, Palette, Database, Smartphone } from "lucide-react"
+import { Moon, Sun, Github, Linkedin, Mail, ExternalLink, Code, Palette, Database, Smartphone, ArrowUp } from "lucide-react"
 import { useTheme } from "next-themes"
 import Image from "next/image"
 
@@ -15,6 +15,7 @@ export default function Portfolio() {
   const [scrollY, setScrollY] = useState(0)
   const heroRef = useRef<HTMLElement>(null)
   const spotlightRef = useRef<HTMLDivElement>(null)
+  const [showTopButton, setShowTopButton] = useState(false)
 
   // Ensure component is mounted before rendering theme-dependent content
   useEffect(() => {
@@ -22,7 +23,10 @@ export default function Portfolio() {
   }, [])
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
+    const handleScroll = () => {
+      setScrollY(window.scrollY)
+      setShowTopButton(window.scrollY > 200)
+    }
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
     }
@@ -35,6 +39,10 @@ export default function Portfolio() {
       window.removeEventListener("mousemove", handleMouseMove)
     }
   }, [])
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
   // Don't render until mounted to avoid hydration mismatch
   if (!mounted) {
@@ -358,6 +366,17 @@ export default function Portfolio() {
           </p>
         </div>
       </footer>
+
+      {/* Back to Top Button */}
+      {showTopButton && (
+        <button
+          onClick={handleScrollToTop}
+          className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300 animate-fade-in-up"
+          aria-label="Back to top"
+        >
+          <ArrowUp className="w-6 h-6 animate-bounce" />
+        </button>
+      )}
     </div>
   )
 }
