@@ -17,7 +17,6 @@ export default function Portfolio() {
   const spotlightRef = useRef<HTMLDivElement>(null)
   const [showTopButton, setShowTopButton] = useState(false)
 
-  // Ensure component is mounted before rendering theme-dependent content
   useEffect(() => {
     setMounted(true)
   }, [])
@@ -44,7 +43,6 @@ export default function Portfolio() {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
-  // Don't render until mounted to avoid hydration mismatch
   if (!mounted) {
     return null
   }
@@ -53,7 +51,7 @@ export default function Portfolio() {
     {
       title: "E-Commerce Platform",
       description: "Full-stack e-commerce solution with React, Node.js, and PostgreSQL",
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80", // Unsplash new e-commerce
+      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80",
       tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
       github: "#",
       live: "#",
@@ -61,7 +59,7 @@ export default function Portfolio() {
     {
       title: "Task Management App",
       description: "Collaborative task management with real-time updates",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80", // Unsplash dashboard
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80",
       tech: ["Next.js", "Socket.io", "MongoDB", "Tailwind"],
       github: "#",
       live: "#",
@@ -93,7 +91,7 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 transition-all duration-500">
-      {/* Cursor Spotlight Effect */}
+
       <div
         ref={spotlightRef}
         className="fixed inset-0 pointer-events-none z-30 opacity-0 dark:opacity-100 transition-opacity duration-500"
@@ -102,7 +100,7 @@ export default function Portfolio() {
         }}
       />
 
-      {/* Navigation */}
+
       <nav className="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-700/50 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -143,9 +141,9 @@ export default function Portfolio() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated Background */}
+
         <div className="absolute inset-0 overflow-hidden">
           <div
             className="absolute inset-0 opacity-20 dark:opacity-30"
@@ -188,7 +186,6 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-slate-400 dark:border-slate-500 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-slate-400 dark:bg-slate-500 rounded-full mt-2 animate-pulse"></div>
@@ -196,7 +193,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* About Section */}
+
       <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
